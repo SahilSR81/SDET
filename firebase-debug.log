@@ -1,0 +1,124 @@
+[debug] [2025-06-05T11:47:08.020Z] ----------------------------------------------------------------------
+[debug] [2025-06-05T11:47:08.022Z] Command:       /usr/bin/node /usr/bin/firebase init functions --project sdetlearn
+[debug] [2025-06-05T11:47:08.023Z] CLI Version:   14.4.0
+[debug] [2025-06-05T11:47:08.023Z] Platform:      linux
+[debug] [2025-06-05T11:47:08.023Z] Node Version:  v24.1.0
+[debug] [2025-06-05T11:47:08.023Z] Time:          Thu Jun 05 2025 17:17:08 GMT+0530 (India Standard Time)
+[debug] [2025-06-05T11:47:08.023Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-06-05T11:47:08.025Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-06-05T11:47:08.056Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-05T11:47:08.057Z] > authorizing via signed-in user (panchamlehri@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/arjun/Documents/GitHub/SDET-Hub
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-06-05T11:47:08.059Z] Using project from CLI flag: sdetlearn
+[debug] [2025-06-05T11:47:08.060Z] Checked if tokens are valid: false, expires at: 1747844470205
+[debug] [2025-06-05T11:47:08.060Z] Checked if tokens are valid: false, expires at: 1747844470205
+[debug] [2025-06-05T11:47:08.060Z] > refreshing access token with scopes: []
+[debug] [2025-06-05T11:47:08.061Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-06-05T11:47:08.061Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-05T11:47:08.722Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-06-05T11:47:08.723Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-05T11:47:08.742Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sdetlearn [none]
+[debug] [2025-06-05T11:47:08.958Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-06-05T11:47:08.959Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2025-06-05T11:47:09.609Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sdetlearn 403
+[debug] [2025-06-05T11:47:09.609Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sdetlearn {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2025-06-05T11:47:09.618Z] Request to https://firebase.googleapis.com/v1beta1/projects/sdetlearn had HTTP Error: 403, The caller does not have permission
+[debug] [2025-06-05T11:47:10.208Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/sdetlearn had HTTP Error: 403, The caller does not have permission
+    at responseToError (/usr/lib/node_modules/firebase-tools/lib/responseToError.js:52:12)
+    at RetryOperation._fn (/usr/lib/node_modules/firebase-tools/lib/apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[error] 
+[error] Error: Failed to get Firebase project sdetlearn. Please make sure the project exists and your account has permission to access it.
+[debug] [2025-06-05T11:51:53.955Z] ----------------------------------------------------------------------
+[debug] [2025-06-05T11:51:53.960Z] Command:       /usr/bin/node /usr/bin/firebase init functions --project sdetlearn
+[debug] [2025-06-05T11:51:53.961Z] CLI Version:   14.4.0
+[debug] [2025-06-05T11:51:53.961Z] Platform:      linux
+[debug] [2025-06-05T11:51:53.961Z] Node Version:  v24.1.0
+[debug] [2025-06-05T11:51:53.961Z] Time:          Thu Jun 05 2025 17:21:53 GMT+0530 (India Standard Time)
+[debug] [2025-06-05T11:51:53.962Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-06-05T11:51:54.251Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-05T11:51:54.252Z] > authorizing via signed-in user (sahilrajputsingh81@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/arjun
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-06-05T11:51:54.255Z] Using project from CLI flag: sdetlearn
+[debug] [2025-06-05T11:51:54.256Z] Checked if tokens are valid: true, expires at: 1749127762902
+[debug] [2025-06-05T11:51:54.256Z] Checked if tokens are valid: true, expires at: 1749127762902
+[debug] [2025-06-05T11:51:54.258Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sdetlearn [none]
+[debug] [2025-06-05T11:51:54.938Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sdetlearn 200
+[debug] [2025-06-05T11:51:54.939Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sdetlearn {"projectId":"sdetlearn","projectNumber":"630425163141","displayName":"SDETLearn","name":"projects/sdetlearn","resources":{"hostingSite":"sdetlearn"},"state":"ACTIVE","etag":"1_5294000c-6726-4a3a-b619-521016eb602d"}
+[info] i  Using project sdetlearn (SDETLearn) 
+[info] 
+=== Functions Setup
+[debug] [2025-06-05T11:51:54.952Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-05T11:51:54.952Z] > authorizing via signed-in user (sahilrajputsingh81@gmail.com)
+[debug] [2025-06-05T11:51:54.952Z] [iam] checking project sdetlearn for permissions ["firebase.projects.get"]
+[debug] [2025-06-05T11:51:54.954Z] Checked if tokens are valid: true, expires at: 1749127762902
+[debug] [2025-06-05T11:51:54.954Z] Checked if tokens are valid: true, expires at: 1749127762902
+[debug] [2025-06-05T11:51:54.954Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/sdetlearn:testIamPermissions [none]
+[debug] [2025-06-05T11:51:54.955Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/sdetlearn:testIamPermissions x-goog-quota-user=projects/sdetlearn
+[debug] [2025-06-05T11:51:54.955Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/sdetlearn:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-06-05T11:51:56.636Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/sdetlearn:testIamPermissions 200
+[debug] [2025-06-05T11:51:56.637Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/sdetlearn:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-06-05T11:51:56.638Z] Checked if tokens are valid: true, expires at: 1749127762902
+[debug] [2025-06-05T11:51:56.639Z] Checked if tokens are valid: true, expires at: 1749127762902
+[debug] [2025-06-05T11:51:56.640Z] Checked if tokens are valid: true, expires at: 1749127762902
+[debug] [2025-06-05T11:51:56.640Z] Checked if tokens are valid: true, expires at: 1749127762902
+[debug] [2025-06-05T11:51:56.641Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/sdetlearn/services/cloudfunctions.googleapis.com [none]
+[debug] [2025-06-05T11:51:56.642Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/sdetlearn/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/sdetlearn
+[debug] [2025-06-05T11:51:56.649Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/sdetlearn/services/runtimeconfig.googleapis.com [none]
+[debug] [2025-06-05T11:51:56.650Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/sdetlearn/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/sdetlearn
+[debug] [2025-06-05T11:51:57.466Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/sdetlearn/services/cloudfunctions.googleapis.com 200
+[debug] [2025-06-05T11:51:57.466Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/sdetlearn/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2025-06-05T11:51:58.695Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/sdetlearn/services/runtimeconfig.googleapis.com 200
+[debug] [2025-06-05T11:51:58.696Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/sdetlearn/services/runtimeconfig.googleapis.com [omitted]
+[info] 
+Detected existing codebase(s): default
+
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
