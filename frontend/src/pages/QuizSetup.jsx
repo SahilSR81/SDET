@@ -17,8 +17,8 @@ export default function QuizSetup() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 via-blue-500 to-purple-500">
-      <form onSubmit={handleStart} className="backdrop-blur-lg bg-white/20 shadow-2xl rounded-3xl p-10 w-full max-w-lg flex flex-col items-center animate-fade-in">
+    <div className="min-h-screen flex items-center justify-center bg-gray-900 p-4">
+      <form onSubmit={handleStart} className="bg-gray-800 shadow-xl rounded-lg p-6 sm:p-8 w-full max-w-md flex flex-col items-center">
         <h1 className="text-4xl font-extrabold text-white mb-4 drop-shadow-lg">Start a New Quiz</h1>
         <div className="w-full space-y-6 mb-6">
           <div>
@@ -30,7 +30,7 @@ export default function QuizSetup() {
               value={numQuestions}
               onChange={e => setNumQuestions(Number(e.target.value))}
               className="w-full border-none rounded-xl px-4 py-3 bg-white/80 text-lg font-semibold focus:ring-2 focus:ring-indigo-400 transition"
-              required
+              required            
             />
           </div>
           <div>
@@ -38,7 +38,7 @@ export default function QuizSetup() {
             <select
               value={quizType}
               onChange={e => setQuizType(e.target.value)}
-              className="w-full border-none rounded-xl px-4 py-3 bg-white/80 text-lg font-semibold focus:ring-2 focus:ring-indigo-400 transition"
+              className="w-full border-none rounded-xl px-4 py-3 bg-white/80 text-lg font-semibold focus:ring-2 focus:ring-blue-500 transition text-gray-900"
             >
               {QUIZ_TYPES.map(type => (
                 <option key={type} value={type}>{type}</option>
@@ -50,7 +50,7 @@ export default function QuizSetup() {
             <input
               type="text"
               value={topic}
-              onChange={e => setTopic(e.target.value)}
+              onChange={e => setTopic(e.target.value)}            
               className="w-full border-none rounded-xl px-4 py-3 bg-white/80 text-lg font-semibold focus:ring-2 focus:ring-indigo-400 transition"
               placeholder="e.g. API Testing"
               required
@@ -61,7 +61,7 @@ export default function QuizSetup() {
             <select
               value={difficulty}
               onChange={e => setDifficulty(e.target.value)}
-              className="w-full border-none rounded-xl px-4 py-3 bg-white/80 text-lg font-semibold focus:ring-2 focus:ring-indigo-400 transition"
+              className="w-full border-none rounded-xl px-4 py-3 bg-white/80 text-lg font-semibold focus:ring-2 focus:ring-blue-500 transition text-gray-900"
             >
               {DIFFICULTIES.map(d => (
                 <option key={d} value={d}>{d}</option>
@@ -69,7 +69,7 @@ export default function QuizSetup() {
             </select>
           </div>
         </div>
-        <button type="submit" className="w-full py-3 mt-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-500 text-white text-xl font-bold shadow-lg hover:scale-105 transition-transform duration-200">Start Quiz</button>
+        <button type="submit" className="w-full py-3 mt-2 rounded-lg bg-blue-600 text-white text-xl font-bold shadow-lg hover:bg-blue-700 transition">Start Quiz</button>
       </form>
     </div>
   );

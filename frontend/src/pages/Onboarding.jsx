@@ -33,8 +33,8 @@ export default function Onboarding() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 via-blue-500 to-purple-500">
-      <form onSubmit={handleSubmit} className="backdrop-blur-lg bg-white/20 shadow-2xl rounded-3xl p-10 w-full max-w-md flex flex-col items-center animate-fade-in">
+    <div className="min-h-screen flex items-center justify-center bg-gray-900 p-4">
+      <form onSubmit={handleSubmit} className="bg-gray-800 p-8 rounded-lg shadow-xl w-full max-w-md flex flex-col items-center">
         <h2 className="text-4xl font-extrabold text-white mb-2 drop-shadow-lg">Welcome to SDET Hub!</h2>
         <p className="mb-6 text-lg text-indigo-100 font-medium text-center">Let's get you started. Complete your profile to begin learning.</p>
         {error && <div className="mb-4 text-red-400 font-semibold">{error}</div>}
@@ -42,7 +42,7 @@ export default function Onboarding() {
           type="text"
           placeholder="Full Name"
           className="w-full mb-4 px-4 py-3 rounded-xl border-none bg-white/80 text-lg font-semibold focus:ring-2 focus:ring-indigo-400 transition"
-          value={name}
+          value={name} 
           onChange={e => setName(e.target.value)}
           required
         />
@@ -50,7 +50,7 @@ export default function Onboarding() {
           placeholder="Your learning goals (optional)"
           className="w-full mb-4 px-4 py-3 rounded-xl border-none bg-white/80 text-lg font-medium focus:ring-2 focus:ring-indigo-400 transition"
           value={goals}
-          onChange={e => setGoals(e.target.value)}
+          onChange={e => setGoals(e.target.value)} 
         />
         <button type="submit" className="w-full py-3 mt-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-500 text-white text-xl font-bold shadow-lg hover:scale-105 transition-transform duration-200" disabled={loading}>
           {loading ? "Saving..." : "Complete Onboarding"}
@@ -58,4 +58,4 @@ export default function Onboarding() {
       </form>
     </div>
   );
-} 
+}

@@ -50,8 +50,9 @@ export default function Profile() {
   if (loading) return <div className="p-8">Loading...</div>;
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-blue-50">
-      <form onSubmit={handleSave} className="bg-white p-8 rounded shadow-md w-full max-w-md text-center">
+    <div className="min-h-screen flex items-center justify-center bg-gray-900 py-12 px-4">
+      <form onSubmit={handleSave} className="bg-gray-800 p-8 rounded-xl shadow-2xl w-full max-w-md text-center">
+ <h2 className="text-3xl font-bold mb-6 text-white">Profile Management</h2>
         <h2 className="text-2xl font-bold mb-4 text-blue-700">Profile Management</h2>
         {message && <div className="mb-4 text-green-600">{message}</div>}
         <input
@@ -59,22 +60,22 @@ export default function Profile() {
           placeholder="Full Name"
           className="w-full mb-4 px-3 py-2 border rounded"
           value={name}
-          onChange={e => setName(e.target.value)}
+ onChange={e => setName(e.target.value)}
         />
         <input
           type="text"
           placeholder="Avatar URL (optional)"
           className="w-full mb-4 px-3 py-2 border rounded"
           value={avatar}
-          onChange={e => setAvatar(e.target.value)}
+ onChange={e => setAvatar(e.target.value)}
         />
         <textarea
           placeholder="Your learning goals (optional)"
           className="w-full mb-4 px-3 py-2 border rounded"
           value={goals}
-          onChange={e => setGoals(e.target.value)}
+ onChange={e => setGoals(e.target.value)}
         />
-        <button type="submit" className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition w-full" disabled={saving}>
+        <button type="submit" className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition w-full text-lg font-semibold" disabled={saving}>
           {saving ? "Saving..." : "Save Profile"}
         </button>
       </form>

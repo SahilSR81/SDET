@@ -100,9 +100,9 @@ export default function ModuleDetail() {
   if (!topic) return <div className="p-8">Module not found.</div>;
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 via-blue-500 to-purple-500 py-12 px-2">
+    <div className="min-h-screen bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8 flex justify-center">
       <div className="w-full max-w-2xl">
-        <button onClick={() => navigate(-1)} className="mb-6 text-indigo-100 hover:text-white text-lg font-semibold transition">&larr; Back to Curriculum</button>
+ <button onClick={() => navigate(-1)} className="mb-6 text-blue-400 hover:text-blue-200 text-lg font-semibold transition-colors duration-200 flex items-center"><span className="mr-1">&larr;</span> Back to Curriculum</button>
         <div ref={printRef} className="bg-white/30 backdrop-blur-lg rounded-3xl shadow-2xl p-10 mb-6 animate-fade-in">
           <h1 className="text-3xl font-extrabold text-indigo-900 mb-2 drop-shadow-lg">{topic.title}</h1>
           <p className="mb-4 text-indigo-900 text-lg font-medium">{topic.summary}</p>
@@ -115,8 +115,8 @@ export default function ModuleDetail() {
           <div className="mb-6">
             <h3 className="text-lg font-bold text-indigo-700 mb-2">Your Notes</h3>
             <textarea
-              className="w-full border-none rounded-xl p-3 min-h-[100px] bg-white/80 text-base font-medium focus:ring-2 focus:ring-indigo-400 transition"
-              value={notes}
+ className="w-full border border-gray-700 rounded-lg p-3 min-h-[150px] bg-gray-800 text-gray-300 text-base font-medium focus:outline-none focus:ring-2 focus:ring-blue-600 transition-colors duration-200"
+ value={notes}
               onChange={e => setNotes(e.target.value)}
               placeholder="Write your notes here..."
             />
@@ -124,7 +124,7 @@ export default function ModuleDetail() {
               onClick={handleSaveNotes}
               className="mt-2 px-6 py-2 bg-gradient-to-r from-indigo-600 to-purple-500 text-white rounded-xl font-bold shadow-lg hover:scale-105 transition-transform duration-200"
               disabled={saving}
-            >
+ >
               {saving ? "Saving..." : "Save Notes"}
             </button>
           </div>
@@ -133,19 +133,19 @@ export default function ModuleDetail() {
           <button
             onClick={handleComplete}
             className={`px-6 py-2 rounded-xl text-white font-bold shadow-lg ${userProgress[idx] ? "bg-green-500" : "bg-gray-400 hover:bg-green-500"} transition`}
-          >
+ >
             {userProgress[idx] ? "Completed" : "Mark Complete"}
           </button>
           <button
             onClick={handleBookmark}
             className={`px-6 py-2 rounded-xl font-bold shadow-lg ${userBookmarks.includes(idx) ? "bg-yellow-400 text-black" : "bg-gray-200 text-gray-700 hover:bg-yellow-400 hover:text-black"} transition`}
-          >
+ >
             {userBookmarks.includes(idx) ? "Bookmarked" : "Bookmark"}
           </button>
           <button
             onClick={handlePrint}
             className="px-6 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-500 text-white font-bold shadow-lg hover:scale-105 transition-transform duration-200"
-          >
+ >
             Print / Download PDF
           </button>
         </div>

@@ -7,10 +7,9 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color: #cccccc; /* Light gray text */
+  background-color: #1a1a1a; /* Dark background */
+  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -19,19 +18,18 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #1e90ff; /* Dodger blue for links */
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #4682b4; /* Steel blue on hover */
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #1a1a1a; /* Ensure body background is also dark */
 }
 
 h1 {

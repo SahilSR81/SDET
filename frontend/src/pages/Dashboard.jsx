@@ -65,7 +65,7 @@ export default function Dashboard() {
   if (loading) return <div className="p-8">Loading...</div>;
 
   const level = getLevel(xp);
-  const nextLevel = getNextLevel(xp);
+  const nextLevel = getNextLevel(level.level);
   const levelProgress = Math.min(100, ((xp - level.xp) / ((nextLevel.xp || xp+1) - level.xp)) * 100);
   const streakReward = getStreakReward(streak);
 
@@ -82,57 +82,57 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen flex bg-gradient-to-br from-indigo-500 via-blue-500 to-purple-500">
-      <aside className="w-72 bg-white/20 backdrop-blur-lg text-white p-8 hidden md:block shadow-2xl rounded-r-3xl mt-8 ml-4">
-        <h2 className="text-2xl font-extrabold mb-8 tracking-wide drop-shadow-lg">SDET Hub</h2>
+    <div className="min-h-screen flex bg-gray-900 text-gray-100">
+      <aside className="w-64 bg-gray-800 p-6 hidden md:block shadow-lg">
+        <h2 className="text-xl font-bold mb-6 text-white">SDET Hub</h2>
         <nav>
-          <ul className="space-y-6 text-lg font-semibold">
-            <li><Link to="/dashboard" className="hover:text-indigo-200 transition">Dashboard</Link></li>
-            <li><Link to="/profile" className="hover:text-indigo-200 transition">Profile</Link></li>
-            <li><Link to="/curriculum" className="hover:text-indigo-200 transition">Curriculum</Link></li>
-            <li><Link to="/quiz/setup" className="hover:text-indigo-200 transition">Quiz</Link></li>
-            <li><Link to="/projects" className="hover:text-indigo-200 transition">Projects</Link></li>
-            <li><Link to="/settings" className="hover:text-indigo-200 transition">Settings</Link></li>
+          <ul className="space-y-4 text-sm">
+            <li><Link to="/dashboard" className="block py-2 px-4 rounded transition duration-200 hover:bg-gray-700">Dashboard</Link></li>
+            <li><Link to="/profile" className="block py-2 px-4 rounded transition duration-200 hover:bg-gray-700">Profile</Link></li>
+            <li><Link to="/curriculum" className="block py-2 px-4 rounded transition duration-200 hover:bg-gray-700">Curriculum</Link></li>
+            <li><Link to="/quiz/setup" className="block py-2 px-4 rounded transition duration-200 hover:bg-gray-700">Quiz</Link></li>
+            <li><Link to="/projects" className="block py-2 px-4 rounded transition duration-200 hover:bg-gray-700">Projects</Link></li>
+            <li><Link to="/settings" className="block py-2 px-4 rounded transition duration-200 hover:bg-gray-700">Settings</Link></li>
           </ul>
         </nav>
       </aside>
-      <main className="flex-1 flex flex-col items-center justify-center p-8">
-        <div className="w-full max-w-4xl bg-white/30 backdrop-blur-lg rounded-3xl shadow-2xl p-10 mb-8 animate-fade-in">
-          <h1 className="text-4xl font-extrabold text-indigo-900 mb-4 drop-shadow-lg">Welcome, {profile.name || profile.email}!</h1>
-          <div className="flex flex-wrap gap-8 items-center justify-between mb-8">
-            <div className="flex flex-col items-center">
-              <span className="text-lg font-semibold text-indigo-700">XP</span>
-              <span className="text-3xl font-extrabold text-indigo-900">{xp}</span>
+      <main className="flex-1 p-8">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-3xl font-bold mb-6 text-white">Welcome, {profile.name || profile.email}!</h1>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="bg-gray-800 p-6 rounded-lg shadow-md">
+              <span className="text-sm font-semibold text-gray-400 block mb-2">XP</span>
+              <span className="text-3xl font-bold text-green-400">{xp}</span>
             </div>
-            <div className="flex flex-col items-center">
-              <span className="text-lg font-semibold text-indigo-700">Level</span>
-              <span className="text-2xl font-bold text-green-700">{level.name}</span>
-              <div className="w-32 bg-gray-200 rounded h-3 mt-2">
-                <div className="bg-gradient-to-r from-indigo-500 to-purple-500 h-3 rounded" style={{ width: `${levelProgress}%` }}></div>
+            <div className="bg-gray-800 p-6 rounded-lg shadow-md">
+              <span className="text-sm font-semibold text-gray-400 block mb-2">Level</span>
+              <span className="text-2xl font-bold text-blue-400">{level.name}</span>
+              <div className="w-full bg-gray-700 rounded-full h-2 mt-2">
+                <div className="bg-blue-500 h-2 rounded-full" style={{ width: `${levelProgress}%` }}></div>
               </div>
-              <span className="text-xs text-gray-700">{xp} / {nextLevel.xp} XP to {nextLevel.name}</span>
+              <span className="text-xs text-gray-500 mt-1 block">{xp} / {nextLevel.xp} XP to {nextLevel.name}</span>
             </div>
-            <div className="flex flex-col items-center">
-              <span className="text-lg font-semibold text-indigo-700">Streak</span>
-              <span className="text-2xl font-bold text-orange-600">{streak} days</span>
+            <div className="bg-gray-800 p-6 rounded-lg shadow-md">
+              <span className="text-sm font-semibold text-gray-400 block mb-2">Streak</span>
+              <span className="text-2xl font-bold text-yellow-400">{streak} days</span>
               {streakReward && <span className="mt-1 px-3 py-1 bg-orange-200 text-orange-800 rounded-full font-semibold animate-pulse">{streakReward}</span>}
             </div>
           </div>
+
           <div className="mb-8">
-            <h2 className="text-2xl font-bold mb-2 text-indigo-800">Badges</h2>
-            <div className="flex gap-6 flex-wrap">
+            <h2 className="text-xl font-bold mb-4 text-white">Badges</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {BADGES.map(badge => (
-                <div key={badge.key} className={`p-5 rounded-2xl shadow-lg flex flex-col items-center transition-all ${getBadgeStatus(badges, badge.key) ? "bg-yellow-200 animate-bounce" : "bg-gray-100/70"}`}>
-                  <span className="text-3xl mb-2">🏅</span>
-                  <span className="font-semibold text-indigo-900">{badge.name}</span>
-                  {getBadgeStatus(badges, badge.key) && <span className="text-green-600 mt-1 font-bold">Unlocked!</span>}
+                <div key={badge.key} className={`p-4 rounded-lg shadow-md flex flex-col items-center ${getBadgeStatus(badges, badge.key) ? "bg-yellow-600 text-yellow-900" : "bg-gray-800 text-gray-400"}`}>
+                  <span className="text-2xl mb-2">{badge.emoji}</span>
+                  <span className="font-semibold text-center">{badge.name}</span>
                 </div>
               ))}
             </div>
           </div>
           <div className="mb-8">
-            <h2 className="text-2xl font-bold mb-2 text-indigo-800">Progress Analytics</h2>
-            <div className="bg-white/60 p-6 rounded-2xl shadow-lg">
+            <h2 className="text-xl font-bold mb-4 text-white">Progress Analytics</h2>
+            <div className="bg-gray-800 p-6 rounded-lg shadow-md">
               <Bar data={chartData} options={{ responsive: true, plugins: { legend: { display: false } } }} />
             </div>
           </div>

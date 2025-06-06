@@ -78,21 +78,21 @@ export default function Curriculum() {
   if (loading) return <div className="p-8">Loading curriculum...</div>;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-blue-500 to-purple-500 flex flex-col items-center py-12 px-2">
-      <div className="w-full max-w-4xl mb-8">
-        <h1 className="text-4xl font-extrabold text-white mb-4 drop-shadow-lg text-center">SDET Curriculum</h1>
-        <div className="flex flex-col md:flex-row gap-4 mb-8 justify-center">
+    <div className="min-h-screen bg-gray-900 text-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto mb-12">
+        <h1 className="text-4xl font-bold text-center text-white mb-8">SDET Curriculum</h1>
+        <div className="flex flex-col md:flex-row gap-4 justify-center">
           <input
             type="text"
             placeholder="Search topics or subtopics..."
-            className="px-4 py-3 border-none rounded-xl w-full md:w-1/2 bg-white/80 text-lg font-medium focus:ring-2 focus:ring-indigo-400 transition"
+            className="px-4 py-3 border border-gray-700 rounded-md w-full md:w-1/2 bg-gray-800 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             value={search}
             onChange={e => setSearch(e.target.value)}
           />
           <input
             type="text"
             placeholder="Filter by subtopic..."
-            className="px-4 py-3 border-none rounded-xl w-full md:w-1/3 bg-white/80 text-lg font-medium focus:ring-2 focus:ring-indigo-400 transition"
+            className="px-4 py-3 border border-gray-700 rounded-md w-full md:w-1/3 bg-gray-800 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             value={filter}
             onChange={e => setFilter(e.target.value)}
           />

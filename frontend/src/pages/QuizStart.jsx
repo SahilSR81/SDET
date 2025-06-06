@@ -209,7 +209,7 @@ export default function QuizStart() {
     const dateStr = new Date().toLocaleString();
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 via-blue-500 to-purple-500 py-12 px-2">
-        <div className="w-full max-w-3xl">
+        <div className="w-full max-w-4xl">
           <div ref={printRef} className="bg-white/30 backdrop-blur-lg rounded-3xl shadow-2xl p-10 mb-6 animate-fade-in">
             <div className="flex flex-wrap justify-between mb-4">
               <div>
@@ -220,7 +220,7 @@ export default function QuizStart() {
               <div className="text-right">
                 <div className="inline-block px-4 py-1 bg-blue-200 text-blue-800 rounded-full font-semibold mb-2 text-lg">{difficulty}</div>
                 <div className="text-sm text-indigo-900">Time Taken: {formatTime(timeTaken)}</div>
-                <div className="text-xl font-bold text-green-700">Score: {correct * 100 / questions.length}/100</div>
+                <div className="text-xl font-bold text-green-500">Score: {correct * 100 / questions.length}/100</div>
               </div>
             </div>
             <div className="text-center font-extrabold text-2xl mb-2 text-indigo-900 drop-shadow-lg">SDET Quiz Report</div>
@@ -231,9 +231,9 @@ export default function QuizStart() {
                 {type === "MCQ" && <div className="mb-1 text-indigo-800">Options: {q.options.join(", ")}</div>}
                 {type === "Coding" && <div className="mb-1 text-sm text-indigo-700">Sample Input: {q.sampleInput} | Sample Output: {q.sampleOutput}</div>}
                 <div className="flex items-center gap-2 mb-1">
-                  {status[i] === "Correct" && <span className="text-green-600 text-xl">✅</span>}
-                  {status[i] === "Incorrect" && <span className="text-red-600 text-xl">❌</span>}
-                  {status[i] === "Skipped" && <span className="text-yellow-600 text-xl">⚠️</span>}
+                  {status[i] === "Correct" && <span className="text-green-500 text-xl">✅</span>}
+                  {status[i] === "Incorrect" && <span className="text-red-500 text-xl">❌</span>}
+                  {status[i] === "Skipped" && <span className="text-yellow-500 text-xl">⚠️</span>}
                   <span className="font-semibold text-indigo-900">Your Answer: {answers[i] || "-"}</span>
                   {status[i] === "Incorrect" && <span className="ml-2 text-green-700">✅ Correct: {q.answer || q.solution}</span>}
                 </div>
@@ -250,14 +250,14 @@ export default function QuizStart() {
           <div className="flex flex-wrap gap-4 justify-center">
             <button
               onClick={handlePrint}
-              className="px-8 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-500 text-white text-lg font-bold shadow-lg hover:scale-105 transition-transform duration-200 mb-4"
+              className="px-8 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-lg font-bold shadow-lg hover:scale-105 transition-transform duration-200 mb-4"
               disabled={!pdfReady}
             >
               {pdfReady ? "Download PDF Report" : "Preparing PDF..."}
             </button>
             <button
               onClick={() => navigate("/dashboard")}
-              className="px-8 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-500 text-white text-lg font-bold shadow-lg hover:scale-105 transition-transform duration-200 mb-4"
+              className="px-8 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-lg font-bold shadow-lg hover:scale-105 transition-transform duration-200 mb-4"
             >
               Back to Dashboard
             </button>
@@ -272,7 +272,7 @@ export default function QuizStart() {
   const [userInput, setUserInput] = useState("");
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 via-blue-500 to-purple-500 py-12 px-2">
-      <div className="w-full max-w-2xl">
+      <div className="w-full max-w-3xl">
         <div className="mb-6 text-white text-xl font-bold text-center">Question {current+1} of {questions.length}</div>
         <div className="bg-white/30 backdrop-blur-lg rounded-3xl shadow-2xl p-10 mb-6 animate-fade-in">
           <div className="font-bold text-2xl text-indigo-900 mb-4">{q.question}</div>
